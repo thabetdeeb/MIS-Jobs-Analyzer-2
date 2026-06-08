@@ -14,3 +14,25 @@ df.to_excel("jobs_from_site.xlsx", index=False)
 print("✅ Excel נוצר בהצלחה")
 print(f"נמצאו {len(df)} רשומות")
 print(df.head())
+import os
+
+df.to_excel("jobs_from_site.xlsx", index=False)
+
+print("✅ Excel created")
+
+os.startfile("jobs_from_site.xlsx")
+import os
+import subprocess
+
+df.to_excel("jobs_from_site.xlsx", index=False)
+
+print("✅ Excel created")
+
+# פותח את האקסל
+os.startfile("jobs_from_site.xlsx")
+
+# פותח את הדשבורד
+subprocess.Popen(
+    "py -m streamlit run dashboard.py",
+    shell=True
+)
